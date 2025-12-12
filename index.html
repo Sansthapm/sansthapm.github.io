@@ -1,54 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sansthapm — Professionalism & Meritocracy</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Sansthapm — Participation-as-a-Service for schools. End-to-end tournament participation operations including registrations, logistics, compliance and match-day execution." />
+<title>Sansthapm — The Operational Engine</title>
+<link rel="icon" href="/favicon.ico" />
 <style>
-    body { margin:0; font-family:Arial, sans-serif; background:#f7f7f7; color:#222; }
-    header { padding:80px 20px; text-align:center; background:white; }
-    h1 { font-size:36px; margin-bottom:10px; }
-    p { font-size:18px; opacity:0.8; }
-    .btn { 
-        display:inline-block; 
-        margin-top:20px; 
-        padding:14px 28px; 
-        background:#111; 
-        color:white; 
-        border-radius:6px;
-        text-decoration:none;
-        font-weight:bold;
-    }
-    section { padding:60px 20px; max-width:900px; margin:auto; }
-    .box { background:white; padding:30px; border-radius:10px; margin-bottom:20px; }
-    footer { text-align:center; padding:20px; font-size:14px; opacity:0.6; }
+  :root{ --bg:#ffffff; --muted:#6b7280; --accent:#111827; --card:#ffffff; --maxw:980px; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto; background:var(--bg); color:var(--accent); -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw); margin:36px auto; padding:28px;}
+  header{display:flex; gap:20px; align-items:center; padding:12px 0;}
+  .logo{height:72px; width:auto}
+  .brand{font-weight:700; font-size:20px}
+  .tag{font-size:13px; color:var(--muted); margin-top:4px}
+  .hero{display:grid; gap:18px; padding:28px 0}
+  h1{margin:0; font-size:34px}
+  p.lead{margin:10px 0; font-size:17px; color:var(--muted); max-width:65ch}
+  .ctas{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
+  .btn{padding:12px 18px; border-radius:8px; font-weight:600; text-decoration:none; display:inline-block}
+  .btn-primary{background:#111827; color:white}
+  .btn-ghost{border:1px solid #e6e6e6; background:white; color:#111827}
+  .section{margin-top:20px; padding:20px; background:white; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+  .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .item h3{margin:0 0 6px; font-size:16px}
+  .item p{margin:0; font-size:14px; color:var(--muted)}
+  footer{text-align:center; margin:40px 0 12px; color:var(--muted); font-size:13px}
+  @media (min-width:720px){
+    .hero{grid-template-columns:1fr 320px}
+  }
+  .right-card{background:#fafafa; padding:18px; border-radius:10px; display:flex; flex-direction:column; gap:10px; align-items:flex-start}
 </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <img src="/logo.png" alt="Sansthapm logo" class="logo" />
+      <div>
+        <div class="brand">Sansthapm</div>
+        <div class="tag">The Operational Engine — School Sports Participation</div>
+      </div>
+    </header>
 
-<header>
-    <h1>Sansthapm</h1>
-    <p>Professionalism & Meritocracy in Sports Programs</p>
-    <a class="btn" href="mailto:contact@sansthapm.in">Contact Us</a>
-</header>
+    <main class="hero">
+      <div>
+        <h1>We run school sports participation operations</h1>
+        <p class="lead">From registrations to logistics, documentation to match-day execution — schools rely on Sansthapm to deliver smooth, compliant and predictable sports participation.</p>
 
-<section>
-    <div class="box">
-        <h2>What We Do</h2>
-        <p>We help schools participate in tournaments they usually skip — by running end-to-end sports programs, logistics, compliance, and team operations with minimal load on staff.</p>
-    </div>
+        <div class="ctas">
+          <a class="btn btn-primary" href="mailto:contact@sansthapm.in">Contact Us</a>
+        </div>
 
-    <div class="box">
-        <h2>Why Sansthapm</h2>
-        <p>We believe in making sports participation accessible, structured, and merit-based. Our systems bring professionalism to grassroots sports.</p>
-    </div>
+        <div class="section" style="margin-top:18px">
+          <h3>What We Deliver</h3>
+          <div class="grid">
+            <div class="item"><h3>Registrations & Compliance</h3><p>All forms, IDs, deadlines and documentation handled end-to-end.</p></div>
+            <div class="item"><h3>Team Formation</h3><p>Student lists, communication and selection support for rapid readiness.</p></div>
+            <div class="item"><h3>Logistics & Match-day</h3><p>Transport, coordination, reporting and standing instructions — fully managed.</p></div>
+            <div class="item"><h3>Audit-ready Reporting</h3><p>Participation logs, results documentation and verified records.</p></div>
+          </div>
+        </div>
 
-    <div class="box">
-        <h2>Work With Us</h2>
-        <p>Email us at <b>contact@sansthapm.in</b> to explore consulting, training, or participation programs.</p>
-    </div>
-</section>
+        <div class="section" style="margin-top:18px">
+          <h3>Why Schools Choose Sansthapm</h3>
+          <div class="grid">
+            <div class="item"><h3>Zero Admin Load</h3><p>Your faculty focuses on students — we handle the operations.</p></div>
+            <div class="item"><h3>Predictable Participation</h3><p>Guaranteed entries and team readiness on tight timelines.</p></div>
+            <div class="item"><h3>Transparent Communication</h3><p>Clear updates for school management & parents.</p></div>
+            <div class="item"><h3>Process-first Execution</h3><p>Checklists, uniform operations and scalable delivery.</p></div>
+          </div>
+        </div>
+      </div>
 
-<footer>© 2025 Sansthapm</footer>
+      <aside>
+        <div class="right-card">
+          <div style="font-weight:700">Request Brochure</div>
+          <div style="color:var(--muted); font-size:14px; margin-bottom:8px;">Please let us send you an email. <strong>(We don’t spam.)</strong></div>
+
+          <!-- Form (uses Formspree) -->
+          <form id="brochureForm" style="display:grid; gap:10px; width:100%;">
+            <input type="text" id="name" name="name" placeholder="Your name" required style="padding:10px; border:1px solid #ddd; border-radius:6px;">
+            <input type="text" id="school" name="school" placeholder="School name" required style="padding:10px; border:1px solid #ddd; border-radius:6px;">
+            <input type="email" id="email" name="email" placeholder="Email address" required style="padding:10px; border:1px solid #ddd; border-radius:6px;">
+            <input type="text" name="_gotcha" style="display:none">
+            <button id="submitBtn" type="submit" class="btn btn-primary" style="width:100%;">Request Brochure</button>
+
+            <div id="formMessage" style="color:#0b6; font-size:14px; display:none; padding-top:6px;">
+              Thank you — we’ll email you the brochure within 24 hours.
+            </div>
+            <div id="formError" style="color:#c00; font-size:14px; display:none; padding-top:6px;"></div>
+          </form>
+
+          <hr style="width:100%; margin:12px 0; border:none; border-top:1px solid #eee;">
+          <div style="font-size:13px; color:var(--muted)">
+            Prefer to email directly? <br><a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Sansthapm — School Sports Operations • New Delhi
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Replace this constant with your Formspree endpoint when ready ----
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT";
+  // ---------------------------------------------------------------------
+
+  document.getElementById('brochureForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('formMessage');
+    const err = document.getElementById('formError');
+    msg.style.display='none'; err.style.display='none';
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    const payload = {
+      name: document.getElementById('name').value.trim(),
+      school: document.getElementById('school').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      source: 'website-brochure-form'
+    };
+
+    if (!payload.name || !payload.school || !payload.email) {
+      err.textContent = 'Please fill all required fields.';
+      err.style.display = 'block';
+      btn.disabled=false; btn.textContent='Request Brochure';
+      return;
+    }
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        msg.style.display='block';
+        document.getElementById('name').value='';
+        document.getElementById('school').value='';
+        document.getElementById('email').value='';
+        btn.textContent='Requested';
+      } else {
+        const j = await res.json().catch(()=>({}));
+        err.textContent = (j && j.error) ? j.error : 'Submission failed. Try again later.';
+        err.style.display='block';
+        btn.disabled=false; btn.textContent='Request Brochure';
+      }
+    } catch (e) {
+      err.textContent = 'Network error. Try again later.';
+      err.style.display='block';
+      btn.disabled=false; btn.textContent='Request Brochure';
+    }
+  });
+</script>
 </body>
 </html>
