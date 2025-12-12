@@ -14,24 +14,25 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
+    /* ----------------------------------- */
+    /* COMPACT HEADER (your logo + font unchanged) */
+    /* ----------------------------------- */
+
     header {
       display: flex;
       align-items: center;
-      gap: 40px;
-      padding: 40px 40px;
+      gap: 24px;
+      padding: 20px 40px;
       border-bottom: 1px solid #eee;
-      height: 260px;   /* large header */
+      height: 120px;   /* compact header */
     }
 
-    /* MASSIVE LOGO */
     header img {
-      height: 200px;   /* adjust to 220 / 250px if you want even bigger */
+      height: 80px;     /* same as before */
       width: auto;
       display: block;
     }
 
-    /* BRAND TEXT */
     .brand {
       display: flex;
       flex-direction: column;
@@ -39,16 +40,20 @@
     }
 
     .brand h1 {
-      font-size: 48px;
+      font-size: 24px;   /* same size as before */
       margin: 0;
       font-weight: 700;
     }
 
     .brand p {
-      margin: 8px 0 0 0;
-      font-size: 20px;
-      color: #444;
+      margin: 4px 0 0 0;
+      font-size: 14px;   /* same size as before */
+      color: #555;
     }
+
+    /* ----------------------------------- */
+    /* MAIN LAYOUT */
+    /* ----------------------------------- */
 
     .container {
       max-width: 1180px;
@@ -118,6 +123,7 @@
 
 <body>
 
+<!-- HEADER -->
 <header>
   <img src="logo.png" alt="Sansthapm Logo">
   <div class="brand">
@@ -126,6 +132,7 @@
   </div>
 </header>
 
+<!-- MAIN CONTENT -->
 <div class="container">
   <div class="left">
     <h2>We manage school sports participation — end to end.</h2>
@@ -169,6 +176,7 @@
     </div>
   </div>
 
+  <!-- RIGHT SIDE FORM -->
   <div class="right">
     <h3>Request Brochure</h3>
     <p>Please let us send you an email. <strong>(We don’t spam.)</strong></p>
