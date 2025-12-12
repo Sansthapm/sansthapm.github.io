@@ -2,55 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sansthapm — School Sports Operations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sansthapm — School Sports Participation Operations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
       color: #111;
-      background: #fff;
+      line-height: 1.6;
     }
 
-    /* MASSIVE HEADER WITH HUGE LOGO */
+    /* HEADER */
     header {
       display: flex;
       align-items: center;
-      gap: 24px;
-      padding: 20px;
+      gap: 40px;
+      padding: 40px 40px;
       border-bottom: 1px solid #eee;
-
-      height: 320px; /* Huge header */
+      height: 260px;   /* large header */
     }
 
+    /* MASSIVE LOGO */
     header img {
-      height: 90%;   /* Huge logo - fills most of header */
+      height: 200px;   /* adjust to 220 / 250px if you want even bigger */
       width: auto;
       display: block;
     }
 
-    header .brand {
+    /* BRAND TEXT */
+    .brand {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    header .brand-title {
-      font-size: 32px;
-      font-weight: 700;
+    .brand h1 {
+      font-size: 48px;
       margin: 0;
+      font-weight: 700;
     }
 
-    header .tagline {
-      font-size: 15px;
-      color: #555;
-      margin-top: 2px;
+    .brand p {
+      margin: 8px 0 0 0;
+      font-size: 20px;
+      color: #444;
     }
 
-    /* PAGE LAYOUT */
     .container {
       max-width: 1180px;
       margin: auto;
@@ -59,113 +58,77 @@
       gap: 60px;
     }
 
-    /* LEFT SIDE CONTENT */
     .left {
-      flex: 1.2;
+      flex: 2;
     }
 
-    h1 {
-      margin-top: 0;
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .section-title {
-      font-size: 20px;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 6px;
-    }
-
-    .item-title {
-      font-weight: 700;
-      margin-top: 18px;
-      margin-bottom: 4px;
-    }
-
-    /* RIGHT SIDE BROCHURE FORM */
     .right {
-      width: 340px;
+      flex: 1;
+      max-width: 340px;
       padding: 20px;
       border-left: 1px solid #eee;
     }
 
-    form input {
-      width: 100%;
-      padding: 12px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 12px;
+    h2 {
+      font-size: 36px;
+      margin-top: 0;
+      line-height: 1.3;
     }
 
-    .btn {
+    h3 {
+      margin-bottom: 6px;
+      font-size: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    input, button {
       width: 100%;
-      padding: 12px;
-      background: #0b0b14;
-      color: white;
+      padding: 12px 14px;
+      margin-bottom: 14px;
       font-size: 15px;
-      font-weight: 600;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 6px;
+    }
+
+    button {
+      background: #0a0a0a;
+      color: white;
+      border: none;
+      font-weight: 600;
       cursor: pointer;
     }
 
-    .btn:hover {
-      background: #000;
+    button:hover {
+      opacity: 0.85;
     }
 
     footer {
       text-align: center;
-      padding: 40px 0;
-      color: #888;
+      padding: 40px;
+      margin-top: 80px;
       font-size: 14px;
+      color: #666;
       border-top: 1px solid #eee;
-      margin-top: 60px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
-      .right {
-        width: 100%;
-        border-left: none;
-        border-top: 1px solid #eee;
-        margin-top: 30px;
-        padding-top: 30px;
-      }
-      header {
-        height: 220px; /* Adjusted for smaller screens */
-      }
-      header img {
-        height: 85%;
-      }
     }
   </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-  <img src="logo.png" alt="Sansthapm logo" />
+  <img src="logo.png" alt="Sansthapm Logo">
   <div class="brand">
-    <p class="brand-title">Sansthapm</p>
-    <p class="tagline">The Operational Engine — School Sports Participation</p>
+    <h1>Sansthapm</h1>
+    <p>The Operational Engine — School Sports Participation</p>
   </div>
 </header>
 
-<!-- MAIN LAYOUT -->
 <div class="container">
-
-  <!-- LEFT SECTION -->
   <div class="left">
-
-    <h1>We manage school sports participation — end to end.</h1>
+    <h2>We manage school sports participation — end to end.</h2>
 
     <p>
       Schools want their students to compete, but participation fails when operations fail.
@@ -173,56 +136,56 @@
       We manage registrations, documentation, logistics and match-day execution so your staff can stay focused on students.
     </p>
 
-    <!-- WHAT WE DELIVER -->
-    <p class="section-title">What we deliver</p>
+    <div class="section">
+      <h3>What we deliver</h3>
 
-    <p class="item-title">Registrations & compliance</p>
-    <p>We track tournaments, manage deadlines and submit all required documentation, IDs and forms accurately and on time.</p>
+      <h3>Registrations & compliance</h3>
+      <p>We track tournaments, manage deadlines and submit all required documentation, IDs and forms accurately and on time.</p>
 
-    <p class="item-title">Team formation</p>
-    <p>Clear, practical squad formation with communication and selection support — even on short notice.</p>
+      <h3>Team formation</h3>
+      <p>Clear, practical squad formation with communication and selection support — even on short notice.</p>
 
-    <p class="item-title">Transport & logistics</p>
-    <p>Transport planning, venue coordination and on-ground instructions to ensure punctuality and safety.</p>
+      <h3>Transport & logistics</h3>
+      <p>Transport planning, venue coordination and on-ground instructions to ensure punctuality and safety.</p>
 
-    <p class="item-title">Match-day execution & reporting</p>
-    <p>We manage match-day operations and deliver verified participation reports and results aligned with board requirements.</p>
+      <h3>Match-day execution & reporting</h3>
+      <p>We manage match-day operations and deliver verified participation reports and results aligned with board requirements.</p>
+    </div>
 
-    <!-- WHY SCHOOLS CHOOSE US -->
-    <p class="section-title">Why schools choose Sansthapm</p>
+    <div class="section">
+      <h3>Why schools choose Sansthapm</h3>
 
-    <p class="item-title">Zero administrative burden</p>
-    <p>Teachers remain focused on classrooms — we handle the operations.</p>
+      <h3>Zero administrative burden</h3>
+      <p>Teachers remain focused on classrooms — we handle the operations.</p>
 
-    <p class="item-title">Predictable participation</p>
-    <p>No missed deadlines. Teams formed and submitted even with tight timelines.</p>
+      <h3>Predictable participation</h3>
+      <p>No missed deadlines. Teams formed and entered even with tight timelines.</p>
 
-    <p class="item-title">Improved school reputation</p>
-    <p>Consistent participation raises visibility in district and state circuits.</p>
+      <h3>Improved school reputation</h3>
+      <p>Consistent participation raises visibility in district and state circuits.</p>
 
-    <p class="item-title">Talent pathways</p>
-    <p>Regular competition increases talent visibility and long-term student development.</p>
-
+      <h3>Talent pathways</h3>
+      <p>Regular competition increases talent visibility and long-term student development.</p>
+    </div>
   </div>
 
-  <!-- RIGHT SECTION -->
   <div class="right">
     <h3>Request Brochure</h3>
-    <p style="margin-top:-10px;">Please let us send you an email. <strong>(We don’t spam.)</strong></p>
+    <p>Please let us send you an email. <strong>(We don’t spam.)</strong></p>
 
     <form action="https://formspree.io/f/xkgdkonz" method="POST">
       <input type="text" name="name" placeholder="Your name" required>
       <input type="text" name="school" placeholder="School name" required>
       <input type="email" name="email" placeholder="Email address" required>
-      <button class="btn" type="submit">Request Brochure</button>
+      <button type="submit">Request Brochure</button>
     </form>
 
-    <p style="margin-top:20px; font-size:14px;">
-      Prefer to email directly?<br>
+    <p style="margin-top: 10px; font-size: 14px;">
+      Prefer to email directly?
+      <br>
       <a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
     </p>
   </div>
-
 </div>
 
 <footer>
