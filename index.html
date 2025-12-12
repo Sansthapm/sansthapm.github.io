@@ -15,18 +15,19 @@
       background: #fff;
     }
 
-    /* HEADER */
+    /* MASSIVE HEADER WITH HUGE LOGO */
     header {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
       padding: 20px;
       border-bottom: 1px solid #eee;
-      height: 140px; /* Adjust to control overall logo size */
+
+      height: 320px; /* Huge header */
     }
 
     header img {
-      height: 80%; /* Logo takes 80% of header height */
+      height: 90%;   /* Huge logo - fills most of header */
       width: auto;
       display: block;
     }
@@ -38,19 +39,18 @@
     }
 
     header .brand-title {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 700;
       margin: 0;
     }
 
     header .tagline {
-      font-size: 14px;
+      font-size: 15px;
       color: #555;
-      margin: 0;
-      margin-top: -4px;
+      margin-top: 2px;
     }
 
-    /* LAYOUT */
+    /* PAGE LAYOUT */
     .container {
       max-width: 1180px;
       margin: auto;
@@ -59,7 +59,11 @@
       gap: 60px;
     }
 
-    /* LEFT SIDE */
+    /* LEFT SIDE CONTENT */
+    .left {
+      flex: 1.2;
+    }
+
     h1 {
       margin-top: 0;
       font-size: 40px;
@@ -71,19 +75,16 @@
       font-size: 20px;
       font-weight: 700;
       margin-top: 40px;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .item-title {
       font-weight: 700;
+      margin-top: 18px;
       margin-bottom: 4px;
     }
 
-    .left {
-      flex: 1.2;
-    }
-
-    /* RIGHT SIDE — BROCHURE FORM */
+    /* RIGHT SIDE BROCHURE FORM */
     .right {
       width: 340px;
       padding: 20px;
@@ -123,11 +124,33 @@
       border-top: 1px solid #eee;
       margin-top: 60px;
     }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .right {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #eee;
+        margin-top: 30px;
+        padding-top: 30px;
+      }
+      header {
+        height: 220px; /* Adjusted for smaller screens */
+      }
+      header img {
+        height: 85%;
+      }
+    }
   </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <img src="logo.png" alt="Sansthapm logo" />
   <div class="brand">
@@ -136,15 +159,17 @@
   </div>
 </header>
 
+<!-- MAIN LAYOUT -->
 <div class="container">
 
-  <!-- LEFT SIDE -->
+  <!-- LEFT SECTION -->
   <div class="left">
+
     <h1>We manage school sports participation — end to end.</h1>
 
     <p>
-      Schools want their students to compete, but participation fails when operations fail.  
-      Sansthapm ensures your school shows up — reliably, compliantly and on time.  
+      Schools want their students to compete, but participation fails when operations fail.
+      Sansthapm ensures your school shows up — reliably, compliantly and on time.
       We manage registrations, documentation, logistics and match-day execution so your staff can stay focused on students.
     </p>
 
@@ -177,23 +202,24 @@
 
     <p class="item-title">Talent pathways</p>
     <p>Regular competition increases talent visibility and long-term student development.</p>
+
   </div>
 
-  <!-- RIGHT SIDE -->
+  <!-- RIGHT SECTION -->
   <div class="right">
     <h3>Request Brochure</h3>
     <p style="margin-top:-10px;">Please let us send you an email. <strong>(We don’t spam.)</strong></p>
 
     <form action="https://formspree.io/f/xkgdkonz" method="POST">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="text" name="school" placeholder="School name" required />
-      <input type="email" name="email" placeholder="Email address" required />
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="text" name="school" placeholder="School name" required>
+      <input type="email" name="email" placeholder="Email address" required>
       <button class="btn" type="submit">Request Brochure</button>
     </form>
 
     <p style="margin-top:20px; font-size:14px;">
-      Prefer to email directly?  
-      <br><a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
+      Prefer to email directly?<br>
+      <a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
     </p>
   </div>
 
