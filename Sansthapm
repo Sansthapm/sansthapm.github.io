@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sansthapm — Professionalism & Meritocracy</title>
+<style>
+    body { margin:0; font-family:Arial, sans-serif; background:#f7f7f7; color:#222; }
+    header { padding:80px 20px; text-align:center; background:white; }
+    h1 { font-size:36px; margin-bottom:10px; }
+    p { font-size:18px; opacity:0.8; }
+    .btn { 
+        display:inline-block; 
+        margin-top:20px; 
+        padding:14px 28px; 
+        background:#111; 
+        color:white; 
+        border-radius:6px;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    section { padding:60px 20px; max-width:900px; margin:auto; }
+    .box { background:white; padding:30px; border-radius:10px; margin-bottom:20px; }
+    footer { text-align:center; padding:20px; font-size:14px; opacity:0.6; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Sansthapm</h1>
+    <p>Professionalism & Meritocracy in Sports Programs</p>
+    <a class="btn" href="mailto:contact@sansthapm.in">Contact Us</a>
+</header>
+
+<section>
+    <div class="box">
+        <h2>What We Do</h2>
+        <p>We help schools participate in tournaments they usually skip — by running end-to-end sports programs, logistics, compliance, and team operations with minimal load on staff.</p>
+    </div>
+
+    <div class="box">
+        <h2>Why Sansthapm</h2>
+        <p>We believe in making sports participation accessible, structured, and merit-based. Our systems bring professionalism to grassroots sports.</p>
+    </div>
+
+    <div class="box">
+        <h2>Work With Us</h2>
+        <p>Email us at <b>contact@sansthapm.in</b> to explore consulting, training, or participation programs.</p>
+    </div>
+</section>
+
+<footer>© 2025 Sansthapm</footer>
+</body>
+</html>
