@@ -3,173 +3,56 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="description" content="Sansthapm — Participation-as-a-Service for schools. We handle registrations, logistics, compliance and match-day execution so schools don’t have to." />
+<meta name="description" content="Sansthapm — Participation-as-a-Service for schools. We manage registrations, logistics, compliance and match-day execution so schools can focus on students." />
 <title>Sansthapm — The Operational Engine</title>
 
-<!-- Inter font for a clean minimal look -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg: #ffffff;
-    --muted: #6b7280;
-    --text: #0b1220;
-    --accent: #0b1220;
-    --card: #ffffff;
-    --soft: #f7f8fa;
-    --shadow: 0 8px 30px rgba(11,17,32,0.06);
-    --maxw: 1100px;
-    --radius: 14px;
+    --bg:#ffffff; --muted:#6b7280; --text:#0b1220; --accent:#0b1220;
+    --maxw:1100px; --radius:8px;
   }
-
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
+    margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+    color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased;
   }
 
   .container{max-width:var(--maxw); margin:44px auto; padding:28px;}
-
-  /* Header */
-  header{
-    display:flex;
-    align-items:center;
-    gap:32px;
-    padding:8px 0 24px;
-  }
+  header{display:flex; align-items:center; gap:32px; padding:8px 0 24px;}
   .logo{height:130px; width:auto; display:block}
   .brand-block{display:flex; flex-direction:column}
   .brand{font-weight:700; font-size:22px; letter-spacing:0.01em}
   .tag{color:var(--muted); font-size:13px; margin-top:6px}
 
-  /* Hero */
-  .hero{
-    display:grid;
-    grid-template-columns: 1fr 380px;
-    gap:34px;
-    align-items:start;
-    margin-top:6px;
-  }
+  .hero{display:grid; grid-template-columns:1fr 380px; gap:34px; align-items:start; margin-top:6px;}
+  @media (max-width:980px){ .hero{grid-template-columns:1fr;} }
 
-  .left {
-    padding: 28px 12px 4px 0;
-  }
-
-  h1{
-    margin:0;
-    font-size:38px;
-    font-weight:700;
-    line-height:1.03;
-    letter-spacing:-0.01em;
-  }
-  p.lead{
-    margin:14px 0 0;
-    color:var(--muted);
-    font-size:17px;
-    max-width:68ch;
-  }
+  h1{margin:0; font-size:38px; font-weight:700; line-height:1.03; letter-spacing:-0.01em}
+  p.lead{margin:14px 0 0; color:var(--muted); font-size:17px; max-width:68ch}
 
   .actions{margin-top:20px; display:flex; gap:12px; flex-wrap:wrap}
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 18px; border-radius:10px; font-weight:600; text-decoration:none; cursor:pointer; border:0;}
+  .btn-primary{background:var(--accent); color:white}
+  .btn-ghost{background:transparent; color:var(--text); border:1px solid #ececec}
 
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 18px;
-    border-radius:10px;
-    font-weight:600;
-    text-decoration:none;
-    cursor:pointer;
-    border:0;
-  }
+  .card{background:#fff; border-radius:10px; padding:20px}
+  .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:12px}
+  .item h3{margin:0 0 6px; font-size:16px; font-weight:600}
+  .item p{margin:0; color:var(--muted); font-size:14px}
 
-  .btn-primary{
-    background:var(--accent);
-    color:white;
-    box-shadow:0 6px 18px rgba(11,17,32,0.06);
-    transition:transform .14s ease, box-shadow .14s ease;
-  }
-  .btn-primary:hover{ transform: translateY(-3px); box-shadow:0 14px 30px rgba(11,17,32,0.09); }
+  /* Minimal form (no card) */
+  .right-simple{ padding-top:4px; }
+  input{width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; font-size:14px; margin-bottom:8px}
+  input:focus{outline:none; border-color:#cbd5e1}
 
-  .btn-ghost{
-    background:transparent;
-    color:var(--text);
-    border:1px solid #ececec;
-  }
-
-  /* Card sections */
-  .card{
-    background:var(--card);
-    border-radius:var(--radius);
-    padding:20px;
-    box-shadow:var(--shadow);
-  }
-
-  .grid{
-    display:grid;
-    gap:14px;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    margin-top:12px;
-  }
-  .item h3{ margin:0 0 6px; font-size:16px; font-weight:600 }
-  .item p{ margin:0; color:var(--muted); font-size:14px }
-
-  /* Right column (form) */
-  .right-card{
-    position:sticky;
-    top:28px;
-    background:linear-gradient(180deg,#ffffff 0%, #fbfcfd 100%);
-    border-radius:12px;
-    padding:20px;
-    box-shadow:var(--shadow);
-    border:1px solid #f1f3f5;
-  }
-  .right-card h4{ margin:0 0 8px; font-size:16px }
-  .right-sub{ color:var(--muted); font-size:14px; margin-bottom:12px }
-
-  input, textarea{
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    border:1px solid #e6e7ea;
-    font-size:14px;
-    color:var(--text);
-    outline:none;
-    transition:box-shadow .12s ease, border-color .12s ease;
-    background: white;
-  }
-  input:focus, textarea:focus{ border-color:#cbd5e1; box-shadow:0 6px 18px rgba(14,28,50,0.04) }
-
-  .form-row{ display:grid; gap:10px; margin-top:10px }
-  .muted-small{ color:var(--muted); font-size:13px }
-
-  .tiny-note{ font-size:13px; color:var(--muted); margin-top:10px }
-
-  footer{
-    margin:48px 0 18px;
-    text-align:center;
-    color:var(--muted);
-    font-size:13px;
-  }
-
-  /* Responsive */
-  @media (max-width:980px){
-    .hero{ grid-template-columns: 1fr; }
-    .right-card{ position:relative; top:auto; margin-top:10px }
-    header{ gap:20px }
-  }
+  footer{margin:48px 0 18px; text-align:center; color:var(--muted); font-size:13px}
 </style>
 </head>
 <body>
   <div class="container">
-
-    <!-- header -->
     <header>
       <img src="logo.png" class="logo" alt="Sansthapm logo">
       <div class="brand-block">
@@ -178,13 +61,16 @@
       </div>
     </header>
 
-    <!-- hero -->
     <main class="hero">
-      <section class="left">
-        <h1>We run school sports participation — start to finish</h1>
-        <p class="lead">We remove the paperwork, logistics and match-day chaos. Schools say “we want to participate” — we make it happen: registrations, team formation, transport, compliance and match execution.</p>
+      <!-- Left: content -->
+      <section>
+        <h1>We manage school sports participation — end to end.</h1>
+        <p class="lead">
+          Schools want their students to compete. Participation fails when operations fail.
+          We ensure your school shows up — reliably, compliantly and on time. We manage registrations, documentation, logistics and match-day execution so your staff can focus on students. :contentReference[oaicite:1]{index=1}
+        </p>
 
-        <div class="actions" style="margin-top:18px;">
+        <div class="actions">
           <a class="btn btn-primary" href="mailto:contact@sansthapm.in">Contact Us</a>
           <a class="btn btn-ghost" href="#request-section">Request Brochure</a>
         </div>
@@ -192,47 +78,45 @@
         <div class="card" style="margin-top:22px">
           <strong style="display:block; margin-bottom:8px; font-size:15px">What we deliver</strong>
           <div class="grid">
-            <div class="item"><h3>Registrations & Compliance</h3><p>Deadlines, entries and all documentation handled end-to-end.</p></div>
-            <div class="item"><h3>Team Formation</h3><p>Selection support, student lists and communication for rapid readiness.</p></div>
-            <div class="item"><h3>Logistics & Match-day</h3><p>Transport planning, match coordination and on-ground execution.</p></div>
-            <div class="item"><h3>Reporting</h3><p>Participation logs and verified documentation for boards & audits.</p></div>
+            <div class="item"><h3>Registrations & compliance</h3><p>We track tournaments, manage deadlines and submit all required documentation, IDs and forms accurately and on time. :contentReference[oaicite:2]{index=2}</p></div>
+            <div class="item"><h3>Team formation</h3><p>Quick, practical squad formation with clear communication — even on short notice. :contentReference[oaicite:3]{index=3}</p></div>
+            <div class="item"><h3>Transport & logistics</h3><p>Transport planning, venue coordination and on-ground instructions to ensure punctuality and safety. :contentReference[oaicite:4]{index=4}</p></div>
+            <div class="item"><h3>Match-day execution & reporting</h3><p>We manage match-day operations and deliver participation reports and results aligned with board requirements. :contentReference[oaicite:5]{index=5}</p></div>
           </div>
         </div>
 
         <div class="card" style="margin-top:18px">
-          <strong style="display:block; margin-bottom:8px; font-size:15px">Why schools choose us</strong>
+          <strong style="display:block; margin-bottom:8px; font-size:15px">Why schools choose Sansthapm</strong>
           <div class="grid">
-            <div class="item"><h3>Zero admin load</h3><p>Teachers focus on students — we handle operations.</p></div>
-            <div class="item"><h3>Predictable participation</h3><p>Teams formed quickly and entries guaranteed when required.</p></div>
-            <div class="item"><h3>Transparent communication</h3><p>Clear updates for management and parents.</p></div>
-            <div class="item"><h3>Process-first delivery</h3><p>Checklists, SOPs and local ops for consistent results.</p></div>
+            <div class="item"><h3>Zero administrative burden</h3><p>Teachers remain focused on classrooms — we handle the operations. :contentReference[oaicite:6]{index=6}</p></div>
+            <div class="item"><h3>Predictable participation</h3><p>No missed deadlines. Teams formed and entered even with tight timelines. :contentReference[oaicite:7]{index=7}</p></div>
+            <div class="item"><h3>Improved school reputation</h3><p>Consistent participation raises visibility in district and state circuits. :contentReference[oaicite:8]{index=8}</p></div>
+            <div class="item"><h3>Talent pathways</h3><p>Regular competition increases talent visibility and long-term student development. :contentReference[oaicite:9]{index=9}</p></div>
           </div>
         </div>
       </section>
 
-      <!-- right column with form -->
+      <!-- Right: simple form (no card) -->
       <aside>
-        <div id="request-section" class="right-card">
-          <h4>Request Brochure</h4>
-          <div class="right-sub">Please let us send you an email. <strong>(We don’t spam.)</strong></div>
+        <div id="request-section" class="right-simple">
+          <h4 style="margin:0 0 8px; font-size:16px; font-weight:600;">Request Brochure</h4>
+          <div style="color:var(--muted); font-size:14px; margin-bottom:12px;">Please let us send you an email. <strong>(We don’t spam.)</strong></div>
 
-          <!-- form -->
-          <form id="brochureForm" autocomplete="on" style="display:grid; gap:10px;">
-            <div class="form-row">
-              <input id="name" name="name" type="text" placeholder="Your name" required>
-              <input id="school" name="school" type="text" placeholder="School name" required>
-              <input id="email" name="email" type="email" placeholder="Email address" required>
-              <input type="text" name="_gotcha" style="display:none">
-            </div>
-
+          <form id="brochureForm" autocomplete="on" style="display:grid; gap:8px; max-width:100%;">
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+            <input id="school" name="school" type="text" placeholder="School name" required>
+            <input id="email" name="email" type="email" placeholder="Email address" required>
+            <input type="text" name="_gotcha" style="display:none">
             <button id="submitBtn" class="btn btn-primary" type="submit" style="width:100%;">Request Brochure</button>
 
-            <div id="formMessage" style="color: #0b6; font-size:14px; display:none; margin-top:8px;">
+            <div id="formMessage" style="color:#0b6; font-size:14px; display:none; margin-top:8px;">
               Thank you — we’ll email you the brochure within 24 hours.
             </div>
             <div id="formError" style="color:#c00; font-size:14px; display:none; margin-top:8px;"></div>
 
-            <div class="tiny-note">Prefer to email directly? <a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a></div>
+            <div style="font-size:13px; color:var(--muted); margin-top:8px;">
+              Prefer to email directly? <a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
+            </div>
           </form>
         </div>
       </aside>
@@ -246,7 +130,6 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Formspree endpoint (already configured)
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkgdkonz";
 
   document.getElementById('brochureForm').addEventListener('submit', async function(e){
