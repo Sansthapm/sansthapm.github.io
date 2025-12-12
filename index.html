@@ -1,164 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sansthapm — School Sports Operations</title>
 
-  <!-- Inter font (optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Inline CSS: keep everything self-contained so GitHub Pages serves correctly -->
   <style>
-    :root{
-      --bg: #ffffff;
-      --muted: #6b7280;
-      --text: #0b1220;
-      --accent: #0b1220;
-      --maxw: 1100px;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #111;
+      background: #fff;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      height: 140px; /* Adjust to control overall logo size */
     }
 
-    header{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      padding:20px 24px;
-      border-bottom:1px solid #f0f0f0;
+    header img {
+      height: 80%; /* Logo takes 80% of header height */
+      width: auto;
+      display: block;
     }
-    header img{ height:72px; width:auto; display:block }
 
-    .container{ max-width:var(--maxw); margin:34px auto; padding:0 20px; display:flex; gap:34px; align-items:flex-start; }
-    @media (max-width:980px){ .container{ flex-direction:column; } }
-
-    main{ flex:1 }
-    h1{ font-size:36px; margin:0 0 8px; line-height:1.08; font-weight:700; }
-    p.lead{ margin:0 0 18px; color:var(--muted); font-size:16px; max-width:70ch }
-
-    .card{ background:#fff; border-radius:10px; padding:18px; margin-top:20px; border:1px solid #f3f4f6; }
-    .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:10px; }
-    @media (max-width:900px){ .grid{ grid-template-columns:1fr } }
-    .item h3{ margin:0 0 6px; font-size:16px; font-weight:600 }
-    .item p{ margin:0; color:var(--muted); font-size:14px }
-
-    /* simple right form */
-    aside { width:340px; }
-    .form-wrap{
-      background:#fafafa; border:1px solid #eee; padding:18px; border-radius:8px;
-      position:sticky; top:24px;
+    header .brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .form-wrap h2{ margin:0 0 6px; font-size:18px }
-    .form-muted{ color:var(--muted); font-size:14px; margin-bottom:10px }
 
-    input[type="text"], input[type="email"]{
-      width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd; font-size:14px;
+    header .brand-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0;
     }
-    input:focus{ outline:none; border-color:#cbd5e1 }
 
-    button { width:100%; padding:12px; background:var(--accent); color:white; border:0; border-radius:8px; cursor:pointer; font-weight:600; font-size:15px; }
+    header .tagline {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+      margin-top: -4px;
+    }
 
-    footer{ text-align:center; padding:32px 12px; color:var(--muted); font-size:13px; margin-top:40px; border-top:1px solid #f6f6f6; }
-    a{ color:#0b5bd8; text-decoration:none }
+    /* LAYOUT */
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 40px 20px;
+      display: flex;
+      gap: 60px;
+    }
+
+    /* LEFT SIDE */
+    h1 {
+      margin-top: 0;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .left {
+      flex: 1.2;
+    }
+
+    /* RIGHT SIDE — BROCHURE FORM */
+    .right {
+      width: 340px;
+      padding: 20px;
+      border-left: 1px solid #eee;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #0b0b14;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #888;
+      font-size: 14px;
+      border-top: 1px solid #eee;
+      margin-top: 60px;
+    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="logo.png" alt="Sansthapm logo" />
-    <div>
-      <div style="font-weight:700; font-size:18px;">Sansthapm</div>
-      <div style="color:var(--muted); font-size:13px;">The Operational Engine — School Sports Participation</div>
-    </div>
-  </header>
+<header>
+  <img src="logo.png" alt="Sansthapm logo" />
+  <div class="brand">
+    <p class="brand-title">Sansthapm</p>
+    <p class="tagline">The Operational Engine — School Sports Participation</p>
+  </div>
+</header>
 
-  <div class="container">
-    <main>
-      <h1>We manage school sports participation — end to end.</h1>
-      <p class="lead">Schools want their students to compete. Participation fails when operations fail. We ensure your school shows up — reliably, compliantly and on time. We manage registrations, documentation, logistics and match-day execution so your staff can focus on students.</p>
+<div class="container">
 
-      <div class="card">
-        <strong style="display:block; margin-bottom:8px; font-size:15px">What we deliver</strong>
-        <div class="grid">
-          <div class="item">
-            <h3>Registrations & compliance</h3>
-            <p>We track tournaments, manage deadlines and submit all required documentation, IDs and forms accurately and on time.</p>
-          </div>
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <h1>We manage school sports participation — end to end.</h1>
 
-          <div class="item">
-            <h3>Team formation</h3>
-            <p>Quick, practical squad formation with clear communication — even on short notice.</p>
-          </div>
+    <p>
+      Schools want their students to compete, but participation fails when operations fail.  
+      Sansthapm ensures your school shows up — reliably, compliantly and on time.  
+      We manage registrations, documentation, logistics and match-day execution so your staff can stay focused on students.
+    </p>
 
-          <div class="item">
-            <h3>Transport & logistics</h3>
-            <p>Transport planning, venue coordination and on-ground instructions to ensure punctuality and safety.</p>
-          </div>
+    <!-- WHAT WE DELIVER -->
+    <p class="section-title">What we deliver</p>
 
-          <div class="item">
-            <h3>Match-day execution & reporting</h3>
-            <p>We manage match-day operations and deliver participation reports and results aligned with board requirements.</p>
-          </div>
-        </div>
-      </div>
+    <p class="item-title">Registrations & compliance</p>
+    <p>We track tournaments, manage deadlines and submit all required documentation, IDs and forms accurately and on time.</p>
 
-      <div class="card">
-        <strong style="display:block; margin-bottom:8px; font-size:15px">Why schools choose Sansthapm</strong>
-        <div class="grid">
-          <div class="item">
-            <h3>Zero administrative burden</h3>
-            <p>Teachers remain focused on classrooms — we handle the operations.</p>
-          </div>
-          <div class="item">
-            <h3>Predictable participation</h3>
-            <p>No missed deadlines. Teams formed and entered even with tight timelines.</p>
-          </div>
-          <div class="item">
-            <h3>Improved school reputation</h3>
-            <p>Consistent participation increases your visibility in district and state circuits.</p>
-          </div>
-          <div class="item">
-            <h3>Talent pathways</h3>
-            <p>Regular competition increases talent visibility and long-term student development.</p>
-          </div>
-        </div>
-      </div>
-    </main>
+    <p class="item-title">Team formation</p>
+    <p>Clear, practical squad formation with communication and selection support — even on short notice.</p>
 
-    <aside>
-      <div class="form-wrap">
-        <h2>Request Brochure</h2>
-        <div class="form-muted">Please let us send you an email. <strong>(We don’t spam.)</strong></div>
+    <p class="item-title">Transport & logistics</p>
+    <p>Transport planning, venue coordination and on-ground instructions to ensure punctuality and safety.</p>
 
-        <!-- Formspree endpoint (keeps working) -->
-        <form action="https://formspree.io/f/xkgdkonz" method="POST" novalidate>
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="text" name="school" placeholder="School name" required>
-          <input type="email" name="email" placeholder="Email address" required>
-          <button type="submit">Request Brochure</button>
-        </form>
+    <p class="item-title">Match-day execution & reporting</p>
+    <p>We manage match-day operations and deliver verified participation reports and results aligned with board requirements.</p>
 
-        <p style="font-size:13px; margin-top:12px; color:var(--muted);">
-          Prefer to email directly? <br><a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
-        </p>
-      </div>
-    </aside>
+    <!-- WHY SCHOOLS CHOOSE US -->
+    <p class="section-title">Why schools choose Sansthapm</p>
+
+    <p class="item-title">Zero administrative burden</p>
+    <p>Teachers remain focused on classrooms — we handle the operations.</p>
+
+    <p class="item-title">Predictable participation</p>
+    <p>No missed deadlines. Teams formed and submitted even with tight timelines.</p>
+
+    <p class="item-title">Improved school reputation</p>
+    <p>Consistent participation raises visibility in district and state circuits.</p>
+
+    <p class="item-title">Talent pathways</p>
+    <p>Regular competition increases talent visibility and long-term student development.</p>
   </div>
 
-  <footer>
-    © <span id="year"></span> Sansthapm — School Sports Operations • New Delhi
-  </footer>
+  <!-- RIGHT SIDE -->
+  <div class="right">
+    <h3>Request Brochure</h3>
+    <p style="margin-top:-10px;">Please let us send you an email. <strong>(We don’t spam.)</strong></p>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <form action="https://formspree.io/f/xkgdkonz" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="text" name="school" placeholder="School name" required />
+      <input type="email" name="email" placeholder="Email address" required />
+      <button class="btn" type="submit">Request Brochure</button>
+    </form>
+
+    <p style="margin-top:20px; font-size:14px;">
+      Prefer to email directly?  
+      <br><a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Sansthapm — School Sports Operations • New Delhi
+</footer>
+
 </body>
 </html>
