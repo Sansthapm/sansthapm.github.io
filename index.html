@@ -36,7 +36,7 @@
 <body>
   <div class="wrap">
     <header>
-      <img src="/logo.png" alt="Sansthapm logo" class="logo" />
+      <img src="logo.png" alt="Sansthapm logo" class="logo" />
       <div>
         <div class="brand">Sansthapm</div>
         <div class="tag">The Operational Engine — School Sports Participation</div>
@@ -108,9 +108,9 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ---- Replace this constant with your Formspree endpoint when ready ----
+  // ---- Formspree endpoint baked in ----
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkgdkonz";
-  // ---------------------------------------------------------------------
+  // -------------------------------------
 
   document.getElementById('brochureForm').addEventListener('submit', async function(e){
     e.preventDefault();
