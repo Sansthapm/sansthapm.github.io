@@ -15,39 +15,38 @@
     }
 
     /* ----------------------------------- */
-    /* COMPACT HEADER (your logo + font unchanged) */
+    /* FIXED CLEAN HEADER */
     /* ----------------------------------- */
 
     header {
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: auto;
       display: flex;
       align-items: center;
       gap: 24px;
-      padding: 20px 40px;
-      border-bottom: 1px solid #eee;
-      height: 120px;   /* compact header */
+      padding: 0 20px;
     }
 
     header img {
-      height: 80px;     /* same as before */
+      height: 80px;
       width: auto;
       display: block;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
     .brand h1 {
-      font-size: 24px;   /* same size as before */
       margin: 0;
+      font-size: 24px;
       font-weight: 700;
     }
 
     .brand p {
-      margin: 4px 0 0 0;
-      font-size: 14px;   /* same size as before */
+      margin: 4px 0 0;
+      font-size: 14px;
       color: #555;
     }
 
@@ -125,10 +124,12 @@
 
 <!-- HEADER -->
 <header>
-  <img src="logo.png" alt="Sansthapm Logo">
-  <div class="brand">
-    <h1>Sansthapm</h1>
-    <p>The Operational Engine — School Sports Participation</p>
+  <div class="header-inner">
+    <img src="logo.png" alt="Sansthapm Logo">
+    <div class="brand">
+      <h1>Sansthapm</h1>
+      <p>The Operational Engine — School Sports Participation</p>
+    </div>
   </div>
 </header>
 
