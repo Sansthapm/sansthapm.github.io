@@ -1,743 +1,372 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8" />
-
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Sansthapm — School Sports Operations</title>
-
   <meta name="description" content="Sansthapm manages school sports participation end-to-end: registrations, logistics, compliance and match-day execution." />
-
-
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-
-
   <style>
-
     /* ===== Base / variables ===== */
-
     :root{
-
       --bg: #ffffff;
-
       --text: #0b1220;
-
       --muted: #6b7280;
-
       --accent: #0b1220;
-
       --card-bg: #ffffff;
-
       --card-border: #eef1f3;
-
       --card-shadow: 0 6px 20px rgba(11,17,32,0.04);
-
       --maxw: 1100px;
-
       --radius: 12px;
-
     }
-
     *{box-sizing:border-box}
-
     html,body{height:100%; margin:0; background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
-
     a{color:var(--accent); text-decoration:underline}
 
-
-
     /* ===== Site container ===== */
-
     .site { max-width:var(--maxw); margin:0 auto; padding:18px; }
 
-
-
     /* ===== Header ===== */
-
     header.site-header {
-
       display:flex;
-
       align-items:center;
-
       gap:18px;
-
       padding:14px 0;
-
       border-bottom:1px solid #eee;
-
       margin-bottom:18px;
-
     }
-
     .logo { height:72px; width:auto; display:block; }
-
     .brand-title { font-weight:700; font-size:20px; margin:0; }
-
     .brand-tag { margin:4px 0 0 0; color:var(--muted); font-size:13px; }
 
-
-
     /* ===== Hero ===== */
-
     .hero { padding:6px 0 18px; }
-
     .hero-title { font-size:24px; margin:0 0 10px; font-weight:700; line-height:1.12; }
-
     .hero-lead { color:var(--muted); margin:0 0 14px; font-size:15px; }
 
-
-
     /* ===== Layout ===== */
-
     .layout { display:block; gap:28px; }
-
     .content { padding-right:6px; }
-
     .form-panel { margin-top:18px; background:#fafafa; border:1px solid var(--card-border); padding:14px; border-radius:10px; box-shadow:var(--card-shadow); }
 
-
-
     /* left content card style used for blocks */
-
     .card { background:var(--card-bg); border:1px solid var(--card-border); padding:18px; border-radius:var(--radius); box-shadow:var(--card-shadow); }
-
     .section-title { font-weight:700; margin:18px 0 8px; font-size:16px; }
-
     .item-title { font-weight:700; margin:12px 0 6px; }
-
     .muted { color:var(--muted); font-size:14px; margin:0; }
 
-
-
     /* ===== Internship — improved box (collapsible) ===== */
-
     .internship-card {
-
       display:block;
-
       background: linear-gradient(180deg, rgba(255,252,248,1) 0%, rgba(255,250,244,1) 100%);
-
       border:1px solid rgba(11,17,32,0.06);
-
       padding:0;                /* header contains padding so collapsed look is compact */
-
       border-radius:10px;
-
       box-shadow:0 8px 24px rgba(11,17,32,0.04);
-
       margin-top:18px;
-
       position:relative;
-
       overflow:visible;
-
     }
-
-
 
     /* accent stripe */
-
     .internship-card::before{
-
       content:'';
-
       position:absolute;
-
       left:0;
-
       top:12px;
-
       bottom:12px;
-
       width:6px;
-
       background:linear-gradient(180deg,var(--accent), #111);
-
       border-radius:6px;
-
       z-index:1;
-
     }
-
-
 
     /* The clickable header */
-
     .internship-toggle {
-
       display:flex;
-
       align-items:center;
-
       gap:12px;
-
       width:100%;
-
       padding:14px 18px 14px 26px; /* left padding leaves space for stripe */
-
       background:transparent;
-
       border:0;
-
       text-align:left;
-
       cursor:pointer;
-
       font-size:15px;
-
       z-index:2;
-
     }
-
     .internship-toggle:focus { outline:3px solid rgba(11,17,32,0.06); outline-offset:3px; border-radius:8px; }
 
-
-
     .internary-title { font-weight:700; margin:0; font-size:15px; }
-
     .internary-summary { margin:0; color:var(--muted); font-size:13px; }
 
-
-
     /* Collapsible content area */
-
     .internship-body {
-
       padding: 0 18px 18px 18px;
-
       border-top:1px solid rgba(11,17,32,0.03);
-
       max-height: 0;
-
       overflow: hidden;
-
       transition: max-height 280ms ease, opacity 240ms ease, padding 240ms;
-
       opacity: 0;
-
     }
-
     .internship-card.open .internship-body {
-
       opacity: 1;
-
       padding: 12px 18px 18px 18px;
-
       max-height: 1000px; /* large enough to show content; transition will animate */
-
     }
-
-
 
     .internship-body p { margin:8px 0; color:var(--muted); font-size:14px; line-height:1.45; }
 
-
-
     /* chevron */
-
     .chev {
-
       margin-left:auto;
-
       transition: transform 220ms ease;
-
       color:var(--muted);
-
       font-size:14px;
-
       display:inline-block;
-
     }
-
     .internship-card.open .chev { transform: rotate(180deg); }
 
-
-
     /* ===== Form inputs ===== */
-
     form input, form button, form textarea {
-
       width:100%;
-
       padding:12px;
-
       font-size:15px;
-
       border-radius:8px;
-
       border:1px solid #ddd;
-
       margin-bottom:10px;
-
       background:white;
-
     }
-
     form button {
-
       background:var(--accent);
-
       color:white;
-
       border:0;
-
       font-weight:600;
-
       cursor:pointer;
-
       padding:12px;
-
       border-radius:8px;
-
       font-size:15px;
-
     }
-
     .small-note { font-size:13px; color:var(--muted); }
-
-
 
     footer { margin:36px 0; text-align:center; color:var(--muted); font-size:13px; padding-bottom:22px }
 
-
-
     /* ===== Desktop layout ===== */
-
     @media (min-width:900px){
-
       header.site-header { padding:18px 0; }
-
       .logo { height:96px; }
-
       .brand-title { font-size:26px }
-
       .brand-tag { font-size:14px }
 
-
-
       .layout { display:flex; align-items:flex-start; gap:36px; }
-
       .content { flex:2; }
-
       .form-panel { flex:1; max-width:360px; margin-top:0; position:sticky; top:28px; align-self:flex-start; }
 
-
-
       .hero-title { font-size:34px; }
-
       .hero-lead { font-size:16px; max-width:68ch; }
-
       .internship-card::before { top:18px; bottom:18px; }
-
       .internship-card .internship-toggle { padding-left:30px; }
-
     }
 
-
-
     /* accessibility focus */
-
     input:focus, button:focus, textarea:focus { outline:3px solid rgba(11,17,32,0.06); outline-offset:2px; }
-
   </style>
-
 </head>
 
-
-
 <body>
-
   <div class="site">
 
-
-
     <!-- Header -->
-
     <header class="site-header" role="banner">
-
       <img src="logo.png" alt="Sansthapm logo" class="logo">
-
       <div class="brand">
-
         <div class="brand-title">Sansthapm</div>
-
         <div class="brand-tag">The Operational Engine — School Sports Participation</div>
-
       </div>
-
     </header>
 
-
-
     <!-- Hero -->
-
     <section class="hero" aria-labelledby="hero-title">
-
       <h1 id="hero-title" class="hero-title">We manage school sports participation — end to end.</h1>
-
       <p class="hero-lead">
-
         Schools want their students to compete, but participation fails when operations fail.
-
         Sansthapm ensures your school shows up — reliably, compliantly and on time. We manage
-
         registrations, documentation, logistics and match-day execution so your staff can focus on students.
-
       </p>
-
     </section>
 
-
-
     <!-- Layout -->
-
     <main class="layout" role="main">
-
       <!-- Left: main content -->
-
       <div class="content" aria-label="main content">
-
         <div class="card">
-
           <div class="section">
-
             <div class="section-title">What we deliver</div>
 
-
-
             <div>
-
               <div class="item-title">Registrations & compliance</div>
-
               <p class="muted">We track tournaments, manage deadlines and submit all required documentation, IDs and forms accurately and on time.</p>
-
             </div>
 
-
-
             <div>
-
               <div class="item-title">Team formation</div>
-
               <p class="muted">Clear, practical squad formation with communication and selection support — even on short notice.</p>
-
             </div>
 
-
-
             <div>
-
               <div class="item-title">Transport & logistics</div>
-
               <p class="muted">Transport planning, venue coordination and on-ground instructions to ensure punctuality and safety.</p>
-
             </div>
-
-
 
             <div>
-
               <div class="item-title">Match-day execution & reporting</div>
-
               <p class="muted">We manage match-day operations and deliver participation reports and results aligned with board requirements.</p>
-
             </div>
-
           </div>
-
-
 
           <div class="section">
-
             <div class="section-title">Why schools choose Sansthapm</div>
 
-
-
             <div>
-
               <div class="item-title">Zero administrative burden</div>
-
               <p class="muted">Teachers remain focused on classrooms — we handle the operations.</p>
-
             </div>
 
-
-
             <div>
-
               <div class="item-title">Predictable participation</div>
-
               <p class="muted">No missed deadlines. Teams formed and entered even with tight timelines.</p>
-
             </div>
 
-
-
             <div>
-
               <div class="item-title">Improved school reputation</div>
-
               <p class="muted">Consistent participation increases your visibility in district and state circuits.</p>
-
             </div>
-
-
 
             <div>
-
               <div class="item-title">Talent pathways</div>
-
               <p class="muted">Regular competition increases talent visibility and long-term student development.</p>
-
             </div>
-
           </div>
 
-
-
           <!-- Collapsible internship card -->
-
           <div class="internship-card" id="internshipCard" aria-expanded="false">
-
             <button class="internship-toggle" id="internToggle" aria-controls="internshipBody" aria-expanded="false">
-
               <div>
-
                 <div class="internary-title">Remote Internship — 6–10 hrs/week (Path to Full-Time)</div>
-
                 <div class="internary-summary">Part-time hours, stipend, certificate and a pathway to full-time. Click to read more.</div>
-
               </div>
-
               <span class="chev" aria-hidden="true">▾</span>
-
             </button>
 
-
-
             <div class="internship-body" id="internshipBody" role="region" aria-labelledby="internToggle">
-
               <p>We are offering a pivotal Full-Time Remote Internship role within Sansthapm, the School Sports Participation Engine, designed to maximize strategic impact. This role requires an optimized weekly time commitment of <strong>6–10 hours</strong>, affording high flexibility while delivering key results.</p>
-
-
 
               <p>The intern will focus on core growth levers, specifically <strong>market landscaping</strong> and <strong>digital ecosystem penetration</strong>.</p>
 
-
-
               <p>This engagement includes a competitive stipend, a formal completion certificate, and a pathway to a potential full-time employment opportunity based on performance and organizational need.</p>
 
-
-
               <p style="margin-top:10px"><strong>To initiate the assessment process:</strong> submit a concise justification articulating your demonstrable alignment with this role's objectives via email to <a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>.</p>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
-
-
       <!-- Right: brochure form -->
-
       <aside class="form-panel" aria-label="request brochure">
-
         <h3 style="margin:0 0 8px 0">Request Brochure</h3>
-
         <p class="small-note" style="margin:0 0 12px 0">Please let us send you an email. <strong>(We don’t spam.)</strong></p>
 
-
-
         <form id="brochure" action="https://formspree.io/f/xkgdkonz" method="POST" novalidate>
-
           <input id="name" name="name" type="text" placeholder="Your name" required>
-
           <input id="school" name="school" type="text" placeholder="School name" required>
-
           <input id="email" name="email" type="email" placeholder="Email address" required>
-
           <input type="text" name="_gotcha" style="display:none">
-
           <button type="submit">Request Brochure</button>
-
         </form>
 
-
-
         <p class="small-note" style="margin-top:12px">Prefer to email directly?<br>
-
           <a href="mailto:contact@sansthapm.in">contact@sansthapm.in</a>
-
         </p>
-
       </aside>
-
     </main>
 
-
-
     <footer>
-
       © <span id="year"></span> Sansthapm — School Sports Operations • New Delhi
-
     </footer>
-
   </div>
 
-
-
   <script>
-
     // set footer year
-
     document.getElementById('year').textContent = new Date().getFullYear();
 
-
-
     // Collapsible internship logic (accessible)
-
     (function() {
-
       const card = document.getElementById('internshipCard');
-
       const btn = document.getElementById('internToggle');
-
       const body = document.getElementById('internshipBody');
 
-
-
       function setOpen(open) {
-
         if (open) {
-
           card.classList.add('open');
-
           btn.setAttribute('aria-expanded', 'true');
-
           card.setAttribute('aria-expanded', 'true');
-
           body.style.maxHeight = body.scrollHeight + 'px';
-
         } else {
-
           card.classList.remove('open');
-
           btn.setAttribute('aria-expanded', 'false');
-
           card.setAttribute('aria-expanded', 'false');
-
           body.style.maxHeight = null;
-
         }
-
       }
-
-
 
       // default closed
-
       setOpen(false);
 
-
-
       btn.addEventListener('click', () => {
-
         const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
         setOpen(!isOpen);
-
       });
-
-
 
       // allow Enter/Space activation on the button (native)
-
       // ensure body maxHeight recalculates on resize
-
       window.addEventListener('resize', () => {
-
         if (card.classList.contains('open')) {
-
           body.style.maxHeight = body.scrollHeight + 'px';
-
         }
-
       });
-
     })();
 
-
-
     // Formspree progressive enhancement
-
     const form = document.getElementById('brochure');
-
     form.addEventListener('submit', async (e) => {
-
       e.preventDefault();
-
       const data = new FormData(form);
-
       const json = {};
-
       for (const [k,v] of data.entries()) json[k]=v;
-
       try {
-
         const res = await fetch(form.action, {
-
           method: 'POST',
-
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-
           body: JSON.stringify(json)
-
         });
-
         if (res.ok) {
-
           form.reset();
-
           form.querySelector('button').textContent = 'Requested';
-
           const msg = document.createElement('div');
-
           msg.style.color = 'green';
-
           msg.style.marginTop = '12px';
-
           msg.textContent = 'Thank you — we’ll email you the brochure within 24 hours.';
-
           form.appendChild(msg);
-
         } else {
-
           const j = await res.json().catch(()=>({}));
-
           alert(j.error || 'Submission failed. Please try again later.');
-
         }
-
       } catch (err) {
-
         alert('Network error. Try again later.');
-
       }
-
     });
-
   </script>
-
 </body>
-
 </html>
